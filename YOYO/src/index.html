@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>YOYO Animation</title>
-    <style>
-        canvas {
-            border: 2px solid black;
-            background: #f0f0f0;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOYO - Modern Web Solutions</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <canvas id="yoyoCanvas" width="800" height="600"></canvas>
-    <script src="script.js"></script>
+    <nav class="navbar">
+        <div class="logo">YOYO</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to YOYO</h1>
+            <p>Creating Digital Excellence</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+        <canvas id="yoyoCanvas" width="800" height="600"></canvas>
+    </section>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
