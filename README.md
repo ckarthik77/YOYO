@@ -13,10 +13,12 @@ A professional web application featuring modern design and interactive animation
 - Cross-browser compatibility
 
 ## Technologies Used
-- HTML5
-- CSS3
-- JavaScript
-- Canvas API
+- HTML5 & Canvas API
+- CSS3 (Flexbox & Grid)
+- Modern JavaScript (ES6+)
+- Font Awesome Icons
+- Git & GitHub
+- VS Code with Live Server
 
 ## Getting Started
 1. Clone the repository:
