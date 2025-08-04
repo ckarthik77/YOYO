@@ -1,7 +1,7 @@
 # YOYO - Modern Web Solutions
 
 ## Description
-A professional web application featuring modern design and interactive animations using HTML5 Canvas.
+A professional web application featuring modern design and interactive animations using HTML5 Canvas. YOYO combines elegant UI design with dynamic animations to create an engaging user experience.
 
 ## Features
 - Responsive navigation with smooth transitions
@@ -31,12 +31,36 @@ git clone https://github.com/yourusername/YOYO.git
 cd YOYO
 ```
 
-3. Open `src/index.html` in your browser or use Live Server in VS Code
+3. Install dependencies (if any):
+```bash
+npm install
+```
+
+4. Start development server:
+- Open with VS Code
+- Install "Live Server" extension
+- Right-click on `src/index.html` and select "Open with Live Server"
+
+## Project Structure
+```
+YOYO/
+├── src/
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   ├── components/
+│   └── index.html
+├── docs/
+└── README.md
+```
 
 ## Development
-- Use VS Code with Live Server extension for development
-- Make changes in the `src` directory
-- Test responsiveness across different devices
+- Use VS Code with Live Server extension
+- Follow BEM methodology for CSS
+- Write semantic HTML
+- Ensure mobile-first responsive design
+- Test across multiple browsers
 
 ## Contributing
 1. Fork the repository
@@ -46,11 +70,21 @@ cd YOYO
 5. Open a Pull Request
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Author
 [Your Name]
+- GitHub: [@ckarthik77](https://github.com/ckarthik77)
+- LinkedIn: [Chandika Karthikeya](https://linkedin.com/in/Chandika_Karthikeya)
 
 ## Acknowledgments
-- Font Awesome for icons
-- Unsplash for images
+- Font Awesome for the iconic font toolkit
+- Unsplash for high-quality images
+- MDN Web Docs for Canvas API reference
+- The open-source community
+
+## Future Enhancements
+- Add dark/light theme toggle
+- Implement more animation variants
+- Add user interaction controls
+- Optimize performance for mobile devices
