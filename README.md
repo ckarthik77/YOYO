@@ -4,11 +4,13 @@
 A professional web application featuring modern design and interactive animations using HTML5 Canvas.
 
 ## Features
-- Responsive navigation
-- Interactive YOYO animation
-- Modern UI/UX design
-- Mobile-friendly layout
-- Smooth scrolling effects
+- Responsive navigation with smooth transitions
+- Interactive YOYO animation using Canvas API
+- Modern UI/UX design with clean aesthetics
+- Mobile-friendly layout with touch support
+- Smooth scrolling effects and animations
+- Dynamic content loading
+- Cross-browser compatibility
 
 ## Technologies Used
 - HTML5
