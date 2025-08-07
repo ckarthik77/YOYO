@@ -9,9 +9,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">YOYO</div>
+        <div class="logo"><i class="fas fa-yin-yang"></i> YOYO</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
+            <li><a href="#home" class="active">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -20,14 +20,17 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Welcome to YOYO</h1>
-            <p>Control the YOYO with your mouse or touch!</p>
-            <p class="instructions">Click and drag to control manually, or use the buttons below</p>
+            <h1>Welcome to <span style="color:#3498db;">YOYO</span></h1>
+            <p class="subtitle">Experience Interactive Animation & Modern Web Design</p>
+            <div class="instructions">
+                <i class="fas fa-mouse-pointer"></i> <strong>Tip:</strong> Click and drag the YOYO to control it manually.<br>
+                <i class="fas fa-play"></i> Use <b>Swing</b> to start animation, <b>Reset</b> to return to start.
+            </div>
         </div>
         <canvas id="yoyoCanvas" width="800" height="600"></canvas>
         <div class="controls">
-            <button class="control-btn" id="swingBtn">Swing</button>
-            <button class="control-btn" id="resetBtn">Reset</button>
+            <button class="control-btn" id="swingBtn"><i class="fas fa-play"></i> Swing</button>
+            <button class="control-btn" id="resetBtn"><i class="fas fa-redo"></i> Reset</button>
         </div>
     </section>
 
