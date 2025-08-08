@@ -3,37 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOYO - Modern Web Solutions</title>
+    <title>YOYO - Interactive Experience</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo"><i class="fas fa-yin-yang"></i> YOYO</div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <div class="cursor"></div>
+    <nav class="navbar glass">
+        <div class="logo animate__animated animate__fadeInDown">
+            <i class="fas fa-yin-yang fa-spin"></i> YOYO
+        </div>
+        <ul class="nav-links animate__animated animate__fadeInDown">
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+            <li><a href="#portfolio"><i class="fas fa-images"></i> Portfolio</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to <span style="color:#3498db;">YOYO</span></h1>
-            <p class="subtitle">Experience Interactive Animation & Modern Web Design</p>
-            <div class="instructions">
-                <i class="fas fa-mouse-pointer"></i> <strong>Tip:</strong> Click and drag the YOYO to control it manually.<br>
-                <i class="fas fa-play"></i> Use <b>Swing</b> to start animation, <b>Reset</b> to return to start.
+        <div class="particles" id="particles-js"></div>
+        <div class="hero-content animate__animated animate__zoomIn">
+            <h1 class="glowing-text">Welcome to <span class="gradient-text">YOYO</span></h1>
+            <p class="subtitle typewriter">Experience Interactive Animation & Modern Web Design</p>
+            <div class="instructions glass">
+                <i class="fas fa-mouse-pointer bounce"></i> 
+                <strong>Interactive Controls:</strong>
+                <ul class="feature-list">
+                    <li><i class="fas fa-hand-pointer"></i> Click and drag to control manually</li>
+                    <li><i class="fas fa-play"></i> Auto-swing animation</li>
+                    <li><i class="fas fa-magic"></i> Special effects</li>
+                </ul>
             </div>
         </div>
+        
         <canvas id="yoyoCanvas" width="800" height="600"></canvas>
-        <div class="controls">
-            <button class="control-btn" id="swingBtn"><i class="fas fa-play"></i> Swing</button>
-            <button class="control-btn" id="resetBtn"><i class="fas fa-redo"></i> Reset</button>
+        
+        <div class="controls glass">
+            <button class="control-btn neon" id="swingBtn">
+                <i class="fas fa-play"></i> Swing
+            </button>
+            <button class="control-btn neon" id="effectBtn">
+                <i class="fas fa-magic"></i> Effects
+            </button>
+            <button class="control-btn neon" id="resetBtn">
+                <i class="fas fa-redo"></i> Reset
+            </button>
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
