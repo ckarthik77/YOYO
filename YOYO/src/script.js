@@ -325,4 +325,167 @@ function initParticles() {
         particlesJS('particles-js', {
             particles: {
                 number: { value: 120, density: { enable: true, value_area: 800 } },
-                color: { value: ['#00
+                color: { value: ['#00d4ff', '#b300ff', '#ff0080'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.6, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
+                size: { value: 3, random: true, anim: { enable: true, speed: 2, size_min: 0.5 } },
+                line_linked: { enable: true, distance: 150, color: '#00d4ff', opacity: 0.2, width: 1 },
+                move: { 
+                    enable: true, speed: 2, direction: 'none', random: false, 
+                    straight: false, out_mode: 'out', bounce: false,
+                    attract: { enable: true, rotateX: 600, rotateY: 1200 }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 200, line_linked: { opacity: 0.5 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    }
+}
+
+// Custom Cursor
+function initCursor() {
+    const cursor = document.querySelector('.cursor');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.1;
+        cursorY += (mouseY - cursorY) * 0.1;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Cursor hover effects
+    document.querySelectorAll('button, a, .control-btn').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+}
+
+// Theme Toggle
+function initThemeToggle() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const icon = themeToggle.querySelector('i');
+    
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
+    });
+}
+
+// Smooth Scrolling
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+}
+
+// Navigation Scroll Effect
+function initNavScrollEffect() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// Loading Screen
+function initLoadingScreen() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 1000);
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initLoadingScreen();
+    initParticles();
+    initCursor();
+    initThemeToggle();
+    initSmoothScrolling();
+    initNavScrollEffect();
+    
+    // Initialize YOYO animation
+    const canvas = document.getElementById('yoyoCanvas');
+    if (canvas) {
+        new EnhancedYoYo(canvas);
+    }
+    
+    // Add entrance animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.feature-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
+
+// Handle visibility change
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        // Pause animations when tab is not visible
+    } else {
+        // Resume animations when tab becomes visible
+    }
+});
+
+// Performance optimization
+let ticking = false;
+function requestTick() {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
